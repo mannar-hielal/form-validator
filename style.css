@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Raleway:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: rgba(33, 37, 41, 1);
+    padding: 2rem;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), black), url(./img/sign-up-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    --gutter-x: 1.5rem;
+    width: 100%;
+    padding-right: var(--gutter-x, .5rem);
+    padding-left: var(--gutter-x, .5rem);
+    margin: 0 auto;
+    padding-top: calc(var(--gutter-x) * 3);
+}
+
+@media (min-width: 36rem) {
+    .container {
+        max-width: 33.75rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .container {
+        max-width: 45rem;
+    }
+}
+
+
+.contact {
+    background-image: none;
+    background-color: white;
+    background-size: cover;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.8);
+
+}
+
+@media (min-width: 48rem) {
+    .contact {
+        background-image: linear-gradient(105deg,
+                                         rgba(255, 255, 255, 0.9) 0%, /*define white at beginning(0%)*/
+                                         rgba(255, 255, 255, 0.9) 50%, /*efine white in the middle (50%) to have splitted design*/
+                                         transparent 50%),  /*define how both side merge */
+                                         url(./img/keyboard.jpg);
+        background-size: cover;
+    }
+}
+
+h1 {
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family:'Raleway', Times, serif;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+a {
+    color: pink;
+}

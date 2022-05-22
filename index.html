@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Validator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact">
+            <div class="contact__form-wrapper">
+
+              <h1>Sign Up Now</h1>
+
+              <form id="form" class="contact__form">
+                
+                  <div class="form-group label--animated">
+                    <input type="text" class="form-control" name="Username" id="username" placeholder="Enter Username" aria-label="Username">
+                    <label for="username">Username</label>
+                  </div>
+
+                  <div class="form-group label--animated">
+                    <input type="email" class="form-control" id="email" name="Email" placeholder="Enter Email">
+                    <label for="email">Email address</label>
+                  </div>
+
+                  <div class="form-group label--animated">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                    <label for="password">Password</label>
+                  </div>
+
+                  <div class="form-group label--animated">
+                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Enter password again">
+                    <label for="password">Confirm Password</label>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-check radiobox--customized">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <label for="inlineRadio1">
+                        <span class="form-radio-button radiobox-button">
+                        </span>
+                        Private
+                      </label>
+                    </div>
+                    <div class="form-check radiobox--customized">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <label class="form-check-label" for="inlineRadio2">
+                        <span class="form-radio-button radiobox-button">
+                        </span>
+                        Business
+                      </label>
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="terms">
+                        <label class="form-check-label" for="terms">By clicking Register, you agree on our terms and condition</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="newsletter">
+                        <label class="form-check-label" for="newsletter">Sign me up to newsletter</label>
+                    </div>
+                  </div>
+
+                <button id="button" type="submit">
+                    Submit
+                </button>
+              </form>
+
+            </div>
+          </div>
+    </div>
+
+
+    <footer>
+        <p> Developed by <a href="https://www.linkedin.com/in/mannar-hielal/">Mannar Hielal</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
