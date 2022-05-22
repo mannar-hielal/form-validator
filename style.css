@@ -145,9 +145,6 @@ h1 {
     background-color: rgba(255, 69, 0, 1);
 }
 /* warnings states */
-small {
-    visibility: hidden;
-}
 .form-group.success .form-control{
     border-color: lightgreen;
 }
