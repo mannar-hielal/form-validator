@@ -6,21 +6,21 @@ const form = document.getElementById("form");
 
 function checkRequired(inputArr) {
     inputArr.forEach(input=> {
-        input.value.trim() !== "" ? showSuccess(input) : showError(input, `${input.id} should not be empty!`);
+        input.value.trim() !== "" ? showSuccess(input) : showError(input, `${captalizeFirstLetter(input.id)} should not be empty!`);
     })
 }
 
 function checkLength(input, min, max) {
-    input.value.length >= min && input.value.length <=max ? showSuccess(input) :  showError(input, `${input.id} length should be between ${min} and ${max}!`);
+    input.value.length >= min && input.value.length <=max ? showSuccess(input) :  showError(input, `${captalizeFirstLetter(input.id)} length should be between ${min} and ${max}!`);
 }
 
 function checkEmail(input) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    re.test(input.value) ? showSuccess(input) : showError(input, `${input.id} should not be a valid email address!`);
+    re.test(input.value) ? showSuccess(input) : showError(input, `${captalizeFirstLetter(input.id)} should not be a valid email address!`);
 }
 
 function checkPasswordsMatch(input1, input2) {
-    input1.value === input2.value ? showSuccess (input2) :  showError(input2, `${input2.id} should be identical with password!`);
+    input1.value !== "" && input1.value === input2.value ? showSuccess (input2) :  showError(input2, `Confirmed password should be identical with password!`);
 }
 
 function showSuccess(input) {
@@ -35,6 +35,10 @@ function showError(input, msg) {
     formGroup.className = "form-group label--animated error";
     const warningMsg = formGroup.querySelector("small");
     warningMsg.innerText = msg;
+}
+
+function captalizeFirstLetter(input) {
+    return input.charAt(0).toUpperCase() + input.slice(1);
 }
 
 
