@@ -144,6 +144,7 @@ h1 {
 .btn:focus {
     background-color: rgba(255, 69, 0, 1);
 }
+
 /* warnings states */
 .form-group.success .form-control{
     border-color: lightgreen;
@@ -175,7 +176,54 @@ h1 {
     border: 2px solid lightgray;
 }
 
+/* Customized radio buttons */
+.form-group.radios {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
+.radiobox--customized input[type="radio"] {
+    display: none;
+}
+
+.radiobox--customized input[type="radio"]:checked + label span.form-radio-button:after {
+    opacity: 1;
+}
+
+.radiobox--customized label {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.radiobox--customized span.form-radio-button {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 3px solid rgb(153, 23, 235);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -0.15rem;
+    left: 0;
+}
+
+.radiobox--customized span.form-radio-button:after {
+    content: "";
+    display: block;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    background-color: rgb(153, 23, 235);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    
+}
+
+/* Footer */
 footer {
     position: absolute;
     bottom: 0;
