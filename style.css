@@ -93,7 +93,7 @@ h1 {
 /* form elements */
 .contact__form-wrapper {
     width: 100%;
-    padding: 8rem 2rem;
+    padding: 8rem 2rem 3.5rem;
 }
 
 @media (min-width: 62rem) {
@@ -132,6 +132,14 @@ h1 {
     font-family:'Raleway', Times, serif;
     cursor: pointer;
     transition: all 0.4s;
+}
+
+button:disabled,
+button[disabled] {
+    background-color: lightgray;
+    cursor: not-allowed;
+    pointer-events:none;
+    color: rgba(84, 84, 84, 0.5);
 }
 
 @media (min-width: 62rem) {

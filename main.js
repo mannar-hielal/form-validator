@@ -4,7 +4,11 @@ const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 const form = document.getElementById("form");
 
-function checkRequired(inputArr) {
+function checkRequired(input) {
+        input.value.trim() !== "" ? showSuccess(input) : showError(input, `${captalizeFirstLetter(input.id)} should not be empty!`);
+}
+
+function checkAllRequired(inputArr) {
     inputArr.forEach(input=> {
         input.value.trim() !== "" ? showSuccess(input) : showError(input, `${captalizeFirstLetter(input.id)} should not be empty!`);
     })
@@ -25,7 +29,7 @@ function checkPasswordsMatch(input1, input2) {
 
 function showSuccess(input) {
     const formGroup = input.parentElement;
-    formGroup.className = "form-group label--animated success";
+    formGroup.className = "form-group form-group-js label--animated success";
     const warningMsg = formGroup.querySelector("small");
     warningMsg.innerText = "";
 }
@@ -44,9 +48,26 @@ function captalizeFirstLetter(input) {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // prevent the form to be submitted
-    checkRequired([username, email, password, password2]);
+    checkAllRequired([username, email, password, password2]);
     checkLength(username, 5, 25);
     checkLength(password, 8, 20);
     checkEmail(email);
     checkPasswordsMatch(password, password2);
-})
+});
+
+username.addEventListener("blur", function () {
+    checkRequired(this);
+    checkLength(this, 5, 25);
+});
+
+email.addEventListener("blur", function () {
+    checkEmail(this);
+});
+
+password.addEventListener("blur", function () {
+    checkLength(this, 8, 20);
+});
+
+password2.addEventListener("blur", function () {
+    checkPasswordsMatch(password, password2);
+});
