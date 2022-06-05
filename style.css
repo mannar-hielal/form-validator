@@ -183,24 +183,36 @@ h1 {
     align-items: center;
 }
 
-.radiobox--customized input[type="radio"] {
+.form-group.checks .form-check:not(:last-child){
+    margin-bottom: 1rem;
+}
+
+.radiobox--customized input[type="radio"],
+.checkbox--customized input[type="checkbox"]{
     display: none;
 }
 
-.radiobox--customized input[type="radio"]:checked + label span.form-radio-button:after {
+.radiobox--customized input[type="radio"]:checked + label span.form-radio-button:after,
+.checkbox--customized input[type="checkbox"]:checked + label span.form-check-button:after {
     opacity: 1;
 }
 
-.radiobox--customized label {
+.radiobox--customized label,
+.checkbox--customized label {
     position: relative;
     padding-left: 2rem;
     cursor: pointer;
 }
 
+.checkbox--customized label {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .radiobox--customized span.form-radio-button {
     height: 1.5rem;
     width: 1.5rem;
-    border: 3px solid rgb(153, 23, 235);
+    border: 3px solid rgb(84, 84, 84);
     border-radius: 50%;
     display: inline-block;
     position: absolute;
@@ -208,19 +220,34 @@ h1 {
     left: 0;
 }
 
-.radiobox--customized span.form-radio-button:after {
+.checkbox--customized span.form-check-button {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 3px solid rgb(84, 84, 84);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radiobox--customized span.form-radio-button:after,
+.checkbox--customized span.form-check-button:after {
     content: "";
     display: block;
     height: 0.75rem;
     width: 0.75rem;
     border-radius: 50%;
-    background-color: rgb(153, 23, 235);
+    background-color:rgba(255, 69, 0, 1);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    
+}
+
+.checkbox--customized span.form-check-button:after {
+    border-radius: 0;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
 /* Footer */
