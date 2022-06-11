@@ -13,13 +13,16 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     color: rgba(33, 37, 41, 1);
     padding: 2rem;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), black), url(./img/sign-up-bg.jpg);
     background-size: cover;
     background-position: center;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 3rem;
 }
+
 
 .container {
     --gutter-x: 1.5rem;
